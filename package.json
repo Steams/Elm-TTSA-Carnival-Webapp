@@ -1,0 +1,18 @@
+{
+  "name": "ttsa_carnival",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp-concat": "^2.6.1",
+    "gulp-elm": "^0.6.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-plumber": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Radcliffe Robinson",
+  "license": "ISC"
+}

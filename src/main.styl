@@ -1,0 +1,236 @@
+@import "reset.css"
+
+dark-purple = #120035
+lighter-purple = #130840
+my-burgundy =#CB1D34
+my-orange = #EF473A
+
+my-gradient = -webkit-linear-gradient(-65deg, dark-purple 0%, lighter-purple 40%, dark-purple 80%)
+
+my-rad-gradient = -webkit-radial-gradient(circle, dark-purple 0%, lighter-purple 40%, dark-purple 80%)
+
+my-orange-gradient = -webkit-linear-gradient(-65deg, my-orange 0%, my-orange 40%, my-burgundy 80%)
+
+body
+  // background-color #140239
+  // background-image my-rad-gradient
+  // background url('./ttsa_carnival_design.png')
+  background-size cover
+  background-color black
+  color white
+  font-family Arial
+
+body::after
+  content ""
+  background url('./red-noise.png')
+  opacity 0.25
+  top 0
+  left 0
+  bottom 0
+  right 0
+  position absolute
+  z-index -1
+
+li
+  list-style none
+
+.header_container
+  height 60px
+  box-sizing border-box
+  padding-left 10px
+  padding-right 10px
+  // border 1px solid cyan
+
+.header
+  display flex
+  height 100%
+  justify-content space-between
+
+.title
+  position relative
+  margin-top 10px
+  padding-left 5px
+  padding-right 5px
+  border 2px solid rgba(255,255,255,0.9)
+  height 35px
+  line-height 35px
+  text-align center
+  font-weight 700
+
+.title:hover
+  cursor pointer
+// .title::after
+//   content ""
+//   position absolute
+//   top 0
+//   left 0
+//   bottom 0
+//   right 0
+//   height 100%
+//   width 100%
+//   border 2px solid rgba(255,255,255,0.5)
+//   filter blur(6px)
+
+// .title:hover::before
+//   content ""
+//   position absolute
+//   top 0
+//   left 0
+//   bottom 0
+//   right 0
+//   height 100%
+//   width 100%
+//   border 2px solid rgba(255,255,255,0.9)
+//   filter blur(10px)
+
+.navbar
+  display flex
+  width 200px
+  height 100%
+  justify-content flex-end
+  margin-right 100px
+  // border 1px solid blue
+  li
+    margin-left 10px
+    margin-right 10px
+    font-weight 700
+    font-size 14px
+    line-height 60px
+  li:hover
+    cursor pointer
+    transform scale(1.02)
+    // border 1px solid purple
+// .about:hover::before
+//   position absolute
+//   top 0
+//   content "About Us"
+//   filter blur(1px)
+//   z-index -1
+
+// .register:hover::before
+//   position absolute
+//   top 0
+//   content "Register"
+//   filter blur(0.5px)
+//   z-index -1
+
+.countdown_container
+  height 50px
+  width 300px
+  position relative
+  top 30px
+  left 30px
+
+.countdown_list
+  display flex
+  justify-content space-between
+
+.countdown_item
+  box-sizing border-box
+  width 70px
+  height 50px
+  display flex
+  flex-direction column
+
+.countdown_item_top
+  height 25px
+  line-height 25px
+  text-align center
+
+.countdown_item_bot
+  height 25px
+  line-height 25px
+  text-align center
+
+.landing_container
+  margin-top 10px
+  display flex
+  height 100%
+  width 100%
+
+.landing_left
+  display flex
+  flex-direction column
+  align-items center
+  width 100%
+  padding-left 30px
+
+.slideshow_container
+  display flex
+  height 400px
+  justify-content space-between
+  align-items center
+
+.slideshow_button
+  flex-grow 1
+  display flex
+  justify-content center
+  align-items center
+  margin-left 10px
+  margin-right 10px
+  button
+    height 40px
+    width 40px
+    background-color transparent
+    border 2px solid rgba(255,255,255,0.3)
+    color rgba(255,255,255,0.3)
+    font-weight bold
+    box-shadow -4px 4px 15px black
+  button:hover
+    border 2px solid rgba(255,255,255,0.8)
+    color rgba(255,255,255,0.8)
+    cursor pointer
+
+.image_panel
+  height 330px
+  width 600px
+  // background-color rgba(255,255,255,0.7)
+  border 5px solid rgba(255,255,255,1)
+  box-shadow -4px 4px 15px black
+
+.slideshow_description_container
+  height 200px
+  width 600px
+  padding 10px
+
+.description_title
+  font-size 20px
+  width 200px
+  margin-bottom 20px
+
+.description_body
+  width 400px
+  margin-bottom 10px
+
+.description_button
+  button
+    width 130px
+    height 30px
+    background-color transparent
+    border 2px solid rgba(255,255,255,0.8)
+    color white
+  button:hover
+    cursor pointer
+    transform scale(1.01)
+
+.landing_right
+  position relative
+  width 100%
+
+.info_container
+  position absolute
+  height 250px
+  width 450px
+  bottom 0
+  right 0
+  padding 30px
+
+.info_title
+  font-size 20px
+  width 200px
+  margin-bottom 20px
+
+.info_body
+  width 300px
+  margin-bottom 10px
+  text-size 17px
