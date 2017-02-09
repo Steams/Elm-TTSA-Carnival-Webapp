@@ -1,8 +1,14 @@
 module Main exposing (..)
 
 import Html exposing (Html, button, div, text, program, ul, li)
-import Landing exposing (..)
-import Header exposing (..)
+import Landing
+import Header
+
+-- MESSAGES
+
+type AppMsg
+    = LandingMsg Landing.Msg
+    | HeaderMsg Header.Msg
 
 -- MODEL
 
@@ -11,12 +17,6 @@ type alias AppModel
         landingModel : Landing.Model
       , header : Header.Model
       }
-
--- MESSAGES
-
-type AppMsg
-    = LandingMsg Landing.LocalMsg
-    | HeaderMsg Header.Msg
 
 -- Init
 
@@ -31,8 +31,8 @@ init : ( AppModel, Cmd AppMsg )
 init =
     ( initialModel, Cmd.none )
 
--- UPDATE
 
+-- UPDATE
 
 update : AppMsg -> AppModel -> ( AppModel, Cmd AppMsg )
 update msg model =
@@ -53,7 +53,6 @@ update msg model =
                 , Cmd.map HeaderMsg headerCmd)
 
 
-
 -- SUBSCRIPTIONS
 
 subscriptions : AppModel -> Sub AppMsg
@@ -62,7 +61,6 @@ subscriptions model =
         [ Sub.map HeaderMsg (Header.subscriptions)]
 
 -- View
-
 
 view : AppModel -> Html AppMsg
 view model =

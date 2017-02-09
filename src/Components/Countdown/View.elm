@@ -3,7 +3,7 @@ module Countdown.View exposing (..)
 import Html exposing (Html, button, div, text, program, ul, li)
 import Html.Attributes exposing (class,classList)
 
-import Countdown.Data exposing (..)
+import Countdown.Types exposing (..)
 
 type alias Unit = String
 type alias Duration = Int

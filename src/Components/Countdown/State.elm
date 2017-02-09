@@ -2,7 +2,7 @@ module Countdown.State exposing (..)
 
 import Time exposing (Time)
 
-import Countdown.Data exposing (..)
+import Countdown.Types exposing (..)
 
 -- Init
 

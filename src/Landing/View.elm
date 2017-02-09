@@ -1,46 +1,30 @@
-module Landing exposing (..)
+module Landing.View exposing (view)
 
 import Html exposing (Html, button, div, text, program, ul, li, img)
 import Html.Attributes exposing (class, classList, src, height, width)
 
-
--- MESSAGES
-
-
-type LocalMsg = ToggleRegistration
-
--- MODEL
-
-type alias Model = { showRegistration : Bool}
-initialModel : Model
-initialModel =
-    { showRegistration = False }
-
-
-init : ( Model, Cmd LocalMsg )
-init =
-    ( initialModel , Cmd.none )
+import Landing.Types exposing (..)
 
 -- VIEW
-left_button : Html LocalMsg
+left_button : Html Msg
 left_button =
     div [ classList [("slideshow_button",True)]]
         [
          button [] [text "<"]
         ]
-image_panel : Html LocalMsg
+image_panel : Html Msg
 image_panel =
     div [class "image_panel"]
         [img [src "./136.jpg", height 330, width 600] []]
 
-right_button : Html LocalMsg
+right_button : Html Msg
 right_button =
     div [ classList [("slideshow_button",True)]]
         [
          button [] [text ">"]
         ]
 
-slideshow_container : Html LocalMsg
+slideshow_container : Html Msg
 slideshow_container =
     div [ class "slideshow_container" ]
         [
@@ -49,7 +33,7 @@ slideshow_container =
          right_button
         ]
 
-slideshow_description_container : Html LocalMsg
+slideshow_description_container : Html Msg
 slideshow_description_container =
     div [ class "slideshow_description_container"]
         [
@@ -58,7 +42,7 @@ slideshow_description_container =
          div [class "description_button"] [button [] [text "action"]]
         ]
 
-info : Html LocalMsg
+info : Html Msg
 info =
     div [ class "info_container "]
     [
@@ -66,7 +50,7 @@ info =
      div [class "info_body"] [text "More text in a ox god yes i love text in boxes with 4 sides that are more or less of equal length, rick and morty season 3 when ??? More text in a ox god yes i love text in boxes with 4 sides that are more or less of equal length, rick and morty season 3 when ???More text in a ox god yes i love text in boxes with 4 sides that are more or less of equal length, rick and morty season 3 when ???"]
     ]
 
-left : Html LocalMsg
+left : Html Msg
 left =
     div [ class "landing_left"]
         [
@@ -74,7 +58,7 @@ left =
          slideshow_description_container
         ]
 
-right : Model -> Html LocalMsg
+right : Model -> Html Msg
 right model =
     if not model.showRegistration then
     div [ class "landing_right"]
@@ -87,30 +71,10 @@ right model =
         ]
 
 
-view : Model -> Html LocalMsg
+view : Model -> Html Msg
 view model =
     div [ class "landing_container" ]
         [
          left,
          right model
         ]
-
-
--- UPDATE
-
-
-update : LocalMsg -> Model -> ( Model, Cmd LocalMsg )
-update msg model =
-    case msg of
-        ToggleRegistration ->
-            ( {model | showRegistration = False }, Cmd.none )
-
-
-
--- SUBSCRIPTIONS
-
--- subscriptions : Model -> Sub LocalMsg
--- subscriptions model =
---     Mouse.moves MouseMove
-
--- Main

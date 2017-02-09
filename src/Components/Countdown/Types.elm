@@ -1,4 +1,4 @@
-module Countdown.Data exposing (..)
+module Countdown.Types exposing (..)
 
 import Time exposing (..)
 import Date exposing (..)
