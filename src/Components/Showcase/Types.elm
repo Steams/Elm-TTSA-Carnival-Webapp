@@ -7,7 +7,8 @@ import Slideshow.Types exposing (..)
 -- Messages
 
 type Msg
-    = SwitchPackage
+    = NextPackage
+    | PrevPackage
     | UpdateSlideshow Slideshow.Msg
 
 -- Types

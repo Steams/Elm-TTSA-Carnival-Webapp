@@ -3,6 +3,7 @@ module Showcase.View exposing (..)
 import Html exposing (Html, button, div, text, program, ul, li, img, span)
 import Html.Attributes exposing (class, classList, src, height, width)
 import Array exposing (get)
+import Html.Events exposing (onClick)
 
 import Slideshow
 
@@ -12,14 +13,14 @@ left_button : Html Msg
 left_button =
     div [ classList [("slideshow_button",True)]]
         [
-         button [] [text "<"]
+         button [ onClick PrevPackage ] [text "<"]
         ]
 
 right_button : Html Msg
 right_button =
     div [ classList [("slideshow_button",True)]]
         [
-         button [] [text ">"]
+         button [ onClick NextPackage ] [text ">"]
         ]
 
 slideshow : Slideshow.Model -> Html Slideshow.Msg

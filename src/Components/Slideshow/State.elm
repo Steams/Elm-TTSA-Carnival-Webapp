@@ -16,6 +16,10 @@ succ_slide : Model -> Int
 succ_slide model =
     (model.active_slide + 1) % (Array.length model.slides)
 
+pred_slide : Model -> Int
+pred_slide model =
+    (model.active_slide - 1) % (Array.length model.slides)
+
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
