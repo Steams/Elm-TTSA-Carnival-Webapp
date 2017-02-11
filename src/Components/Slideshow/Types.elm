@@ -4,6 +4,7 @@ import Array exposing (Array)
 
 type Msg
     = NextSlide
+    | SetSlideshowPosition Int
 
 type alias Slide = {url : String, width : Int, height : Int }
 

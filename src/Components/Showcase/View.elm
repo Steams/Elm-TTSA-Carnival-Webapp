@@ -1,7 +1,7 @@
 module Showcase.View exposing (..)
 
-import Html exposing (Html, button, div, text, program, ul, li, img, span)
-import Html.Attributes exposing (class, classList, src, height, width)
+import Html exposing (Html, button, div, text, program, ul, li, img, span,input, label)
+import Html.Attributes exposing (class, classList, src, height, width,type_, placeholder)
 import Array exposing (get)
 import Html.Events exposing (onClick)
 
@@ -48,13 +48,22 @@ package_details name desc=
             ]
         ]
 
+registration : Html Msg
+registration =
+    div [ class "registration" ]
+        [
+          label [] [text "Name"]
+        , input [type_ "text", placeholder "Name"] []
+        ]
+
 prompter : Maybe Package -> Html Msg
 prompter m =
     case m of
         Just package ->
             div [ class "prompter"]
                 [
-                 package_details package.title package.description
+                  package_details package.title package.description
+                -- , registration
                 ]
         Nothing -> div [] []
 

@@ -25,6 +25,8 @@ update msg model =
     case msg of
         NextSlide -> ({model | active_slide = succ_slide model }, Cmd.none)
 
+        SetSlideshowPosition index -> ({model | active_slide = index }, Cmd.none)
+
 
 -- SUBSCRIPTIONS
 

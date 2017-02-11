@@ -42,7 +42,6 @@ getSlideshow model package_index =
     }
 
 -- UPDATE
--- Remember to update the models initial slideshow model too
 
 succ_package : Model -> Int
 succ_package model =
