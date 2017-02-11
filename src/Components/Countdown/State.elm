@@ -6,8 +6,8 @@ import Countdown.Types exposing (..)
 
 -- Init
 
-init : Model
-init = Model 0 0 0 0
+initialModel : Model
+initialModel = Model 0 0 0 0
 
 -- UPDATE
 

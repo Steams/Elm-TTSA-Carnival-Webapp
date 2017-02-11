@@ -9,6 +9,8 @@
         , "src/Header"
         , "src/Components"
         , "src/Components/Countdown"
+        , "src/Components/Showcase"
+        , "src/Components/Slideshow"
     ],
     "exposed-modules": [],
     "dependencies": {

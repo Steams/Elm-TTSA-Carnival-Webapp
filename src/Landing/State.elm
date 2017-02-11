@@ -2,9 +2,11 @@ module Landing.State exposing (..)
 
 import Landing.Types exposing (..)
 
+import Showcase
+
 initialModel : Model
 initialModel =
-    { showRegistration = False }
+    { showcaseModel = Showcase.initialModel  }
 
 -- UPDATE
 
@@ -12,13 +14,17 @@ initialModel =
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        ToggleRegistration ->
-            ( {model | showRegistration = False }, Cmd.none )
+        UpdateShowcase subMsg ->
+            let
+                (new_model,showcaseCmd) = Showcase.update subMsg model.showcaseModel
+            in
+                ({model | showcaseModel = new_model }
+                , Cmd.map UpdateShowcase showcaseCmd)
 
 
 
 -- SUBSCRIPTIONS
 
--- subscriptions : Model -> Sub LocalMsg
--- subscriptions model =
---     Mouse.moves MouseMove
+subscriptions : Sub Msg
+subscriptions =
+    Sub.batch [ Sub.map UpdateShowcase Showcase.subscriptions ]

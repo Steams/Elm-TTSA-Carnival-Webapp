@@ -13,7 +13,7 @@ type alias Model = Types.Model
 -- State
 
 initialModel : Model
-initialModel = State.init
+initialModel = State.initialModel
 
 update : Msg -> (Model, Cmd Msg)
 update = State.update

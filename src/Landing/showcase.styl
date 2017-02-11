@@ -1,0 +1,120 @@
+
+grad = -webkit-linear-gradient(45deg, #D63185 30%, #753EA4 80%)
+button-grad = -webkit-linear-gradient(45deg, #E53689 30%, #E6398B 80%)
+title-blue = #4c869e
+//text = #525252
+text = #1a1a1b
+money = #24c157
+
+// cant be fixed height but its children should be
+.showcase
+  display flex
+  flex-direction row
+  align-items center
+  max-width 1200px
+  width 100%
+  margin 20px auto
+
+.slideshow_container
+  display flex
+  flex-direction column
+  align-items center
+  justify-content center
+  height 500px
+  max-width 460px
+  width 100%
+  border-radius 5px
+  //background-color cyan
+  background grad
+  box-shadow 5px 5px 30px rgba(0,0,0,0.5)
+  z-index 2
+
+.package_title
+  font-size 20px
+
+.image_canvas
+  background-color white
+  height 90%
+  width 90%
+  border-radius 5px
+  box-shadow 5px 5px 60px rgba(0,0,0,0.4)
+
+
+.prompter
+  display flex
+  justify-content flex-end
+  height 460px
+  max-width 540px
+  width 100%
+  background-color white
+  border 1px solid grey
+  border-radius 10px
+  transform translate(-50px,0)
+  z-index 1
+
+.package_details
+  position relative
+  color black
+  padding 20px
+  width 400px
+
+.package_header
+  margin-bottom 10px
+
+.package_title
+  font-family 'Droid Sans'
+  font-size 30px
+  margin-bottom 10px
+  color money
+
+.package_price
+  font-family 'Lato'
+  font-weight bold
+  color text
+
+.package_body
+  position relative
+  
+.package_description
+  font-family 'Ubuntu'
+  font-size 18px
+  color text
+
+.package_footer
+  box-sizing border-box
+  position absolute
+  height 100px
+  width 100%
+  display flex
+  align-items center
+  justify-content center
+  bottom 0
+  left 0
+
+.register_button
+  position relative
+  height 50px
+  width 250px
+  background button-grad
+  border-radius 40px
+  border 1px solid rgba(255,255,255,0.3)
+  color white
+  font-size 20px
+  font-family 'Arvo'
+  box-shadow 5px 10px 20px rgba(230, 57, 139, 0.3)
+  outline none
+
+.register_button:hover
+  cursor pointer
+
+.register_button::before
+  content ""
+  position absolute
+  top 0
+  left 0
+  bottom 0
+  right 0
+  background-color transparent
+  border-radius 40px
+  box-shadow 7px 5px 15px rgba(0,0,0,0.2)
+  z-index -1

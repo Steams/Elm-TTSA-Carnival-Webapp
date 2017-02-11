@@ -1,10 +1,10 @@
-module Slideshow exposing (..)
+module Showcase exposing (..)
 
 import Html exposing (Html)
 
-import Slideshow.Types as Types exposing (..)
-import Slideshow.State as State
-import Slideshow.View as View
+import Showcase.Types as Types exposing (..)
+import Showcase.State as State
+import Showcase.View as View
 
 -- Types
 

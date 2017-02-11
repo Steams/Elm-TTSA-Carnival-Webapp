@@ -19,8 +19,8 @@ initialModel = State.initialModel
 update : Msg -> Model -> ( Model, Cmd Msg )
 update = State.update
 
--- subscriptions : Sub Msg
--- subscriptions = State.subscriptions
+subscriptions : Sub Msg
+subscriptions = State.subscriptions
 
 -- View
 

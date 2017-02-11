@@ -1,8 +1,11 @@
 module Landing.Types exposing (..)
 
+import Showcase
+
 -- MESSAGES
-type Msg = ToggleRegistration
+type Msg
+    = UpdateShowcase Showcase.Msg
 
 -- MODEL
 
-type alias Model = { showRegistration : Bool}
+type alias Model = { showcaseModel : Showcase.Model }

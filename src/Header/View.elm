@@ -23,9 +23,9 @@ navbar =
 
 title : Html Msg
 title =
-    div [class "title"]
+    div [class "logo"]
         [
-         text "CARNIVAL 2018"
+         text "TTSA"
         ]
 
 header : Model -> Html Msg

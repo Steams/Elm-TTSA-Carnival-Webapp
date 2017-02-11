@@ -58,7 +58,10 @@ update msg model =
 subscriptions : AppModel -> Sub AppMsg
 subscriptions model =
     Sub.batch
-        [ Sub.map HeaderMsg (Header.subscriptions)]
+        [
+         Sub.map HeaderMsg (Header.subscriptions)
+        ,Sub.map LandingMsg (Landing.subscriptions)
+        ]
 
 -- View
 
@@ -67,7 +70,7 @@ view model =
     div []
         [
           Html.map HeaderMsg (Header.view model.header)
-        -- , Html.map LandingMsg (Landing.view model.landingModel)
+        , Html.map LandingMsg (Landing.view model.landingModel)
         ]
 
 -- Main
