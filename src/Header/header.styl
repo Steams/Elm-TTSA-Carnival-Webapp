@@ -1,0 +1,81 @@
+.header_container
+  height 60px
+  box-sizing border-box
+  padding-left 10px
+  padding-right 10px
+
+.header
+  display flex
+  height 100%
+  width 100%
+  justify-content space-between
+  position relative
+  padding-top 15px
+
+.logo
+  position relative
+  width 100px
+  border 2px solid rgba(255,255,255,0.9)
+  height 35px
+  line-height 35px
+  text-align center
+  font-weight 700
+  color rgba(255,255,255,0.9)
+
+.logo:hover
+  cursor pointer
+
+.countdown_container
+  height 50px
+  width 300px
+  position relative
+
+.countdown_list
+  display flex
+  justify-content space-between
+
+.countdown_item
+  box-sizing border-box
+  width 70px
+  height 50px
+  display flex
+  flex-direction column
+
+.countdown_item_top
+  height 25px
+  line-height 25px
+  text-align center
+  font-weight 900
+  font-family 'Arvo'
+  @media screen and (max-width: 600px)
+    height 17px
+
+.countdown_item_bot
+  height 25px
+  line-height 25px
+  text-align center
+  font-family 'Open Sans'
+  @media screen and (max-width: 600px)
+    height 17px
+
+.countdown_Seconds
+  @media screen and (max-width: 500px)
+    display none
+
+// .navbar
+//   display flex
+//   width 200px
+//   height 100%
+//   justify-content flex-end
+//   margin-right 100px
+//   // border 1px solid blue
+//   li
+//     margin-left 10px
+//     margin-right 10px
+//     font-weight 700
+//     font-size 14px
+//     line-height 60px
+//   li:hover
+//     cursor pointer
+//     transform scale(1.02)
+//     // border 1px solid purple

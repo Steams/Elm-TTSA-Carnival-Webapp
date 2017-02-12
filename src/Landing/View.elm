@@ -18,22 +18,22 @@ super_title : Html Msg
 super_title =
     div [ class "hero_super_title" ]
         [
-         span [class "hero_super_title_text"] [text "2017"]
+         span [class "hero_super_title_text"] [text "T T S A"]
         ]
 
 title : Html Msg
 title =
     div [ class "hero_title" ]
         [
-         span [class "hero_title_text"] [text "Uwi Carnival"]
+         span [class "hero_title_text"] [text "Cosmopolitan"]
         ]
 
 sub_title : Html Msg
 sub_title =
     div [ class "hero_sub_title" ]
         [
-         text "Heres another Sentence. I want this to wrap over onto the other line because "
-        ,span [ class "highlight" ] [ text "#aethetics"]
+         text "Be part of one of the largest bands for "
+        ,span [ class "highlight" ] [ text " UWI CARNIVAL"]
         ]
 
 hero : Html Msg

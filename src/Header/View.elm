@@ -17,15 +17,15 @@ navbar : Html Msg
 navbar =
     ul [ class "navbar" ]
         [
-          li [class "about"] [ text "About Us"],
-          li [class "register"] [ text "Register"]
+          -- li [class "about"] [ text "About Us"],
+          -- li [class "register"] [ text "Register"]
         ]
 
 title : Html Msg
 title =
     div [class "logo"]
         [
-         text "TTSA"
+         text "2017"
         ]
 
 header : Model -> Html Msg

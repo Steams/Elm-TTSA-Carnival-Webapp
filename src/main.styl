@@ -1,6 +1,6 @@
 @import "reset.css"
-@import "Landing/hero.css"
-@import "Landing/showcase.css"
+@import "Landing/landing.css"
+@import "Header/header.css"
 
 dark-purple = #120035
 lighter-purple = #130840
@@ -17,9 +17,10 @@ grad = -webkit-linear-gradient(45deg, rgba(201, 128, 101, 0.3) 30%, rgba(0, 62, 
 
 body::before
   content ""
-  background url('../res/ttsa_carnival_design.png')
+  // background url('../res/ttsa_carnival_design.png')
   // background url('../res/background_1.jpeg')
   background-size cover
+  background white
   opacity 1
   top 0
   left 0
@@ -54,179 +55,3 @@ body::after
 
 li
   list-style none
-
-.header_container
-  height 60px
-  box-sizing border-box
-  padding-left 10px
-  padding-right 10px
-  // border 1px solid cyan
-
-.header
-  display flex
-  height 100%
-  justify-content space-between
-
-.logo
-  position relative
-  width 100px
-  margin-top 10px
-  border 2px solid rgba(255,255,255,0.9)
-  height 35px
-  line-height 35px
-  text-align center
-  font-weight 700
-  color rgba(255,255,255,0.9)
-
-.logo:hover
-  cursor pointer
-
-.navbar
-  display flex
-  width 200px
-  height 100%
-  justify-content flex-end
-  margin-right 100px
-  // border 1px solid blue
-  li
-    margin-left 10px
-    margin-right 10px
-    font-weight 700
-    font-size 14px
-    line-height 60px
-  li:hover
-    cursor pointer
-    transform scale(1.02)
-    // border 1px solid purple
-// .about:hover::before
-//   position absolute
-//   top 0
-//   content "About Us"
-//   filter blur(1px)
-//   z-index -1
-
-// .register:hover::before
-//   position absolute
-//   top 0
-//   content "Register"
-//   filter blur(0.5px)
-//   z-index -1
-
-.countdown_container
-  height 50px
-  width 300px
-  position relative
-  top 30px
-  left 30px
-
-.countdown_list
-  display flex
-  justify-content space-between
-
-.countdown_item
-  box-sizing border-box
-  width 70px
-  height 50px
-  display flex
-  flex-direction column
-
-.countdown_item_top
-  height 25px
-  line-height 25px
-  text-align center
-  font-weight 900
-  font-family 'Arvo'
-
-.countdown_item_bot
-  height 25px
-  line-height 25px
-  text-align center
-  font-family 'Open Sans'
-
-.landing_container
-  display flex
-  flex-direction column
-  margin-top 10px
-  height 100%
-  width 100%
-
-.landing_left
-  display flex
-  flex-direction column
-  align-items center
-  width 100%
-  padding-left 30px
-
-.slideshow_button
-  flex-grow 1
-  display flex
-  justify-content center
-  align-items center
-  margin-left 10px
-  margin-right 10px
-  button
-    height 40px
-    width 40px
-    background-color transparent
-    border 2px solid rgba(255,255,255,0.3)
-    color rgba(255,255,255,0.3)
-    font-weight bold
-    box-shadow -4px 4px 15px black
-  button:hover
-    border 2px solid rgba(255,255,255,0.8)
-    color rgba(255,255,255,0.8)
-    cursor pointer
-
-.image_panel
-  height 330px
-  width 600px
-  // background-color rgba(255,255,255,0.7)
-  border 5px solid rgba(255,255,255,1)
-  box-shadow -4px 4px 15px black
-
-.slideshow_description_container
-  height 200px
-  width 600px
-  padding 10px
-
-.description_title
-  font-size 20px
-  width 200px
-  margin-bottom 20px
-
-.description_body
-  width 400px
-  margin-bottom 10px
-
-.description_button
-  button
-    width 130px
-    height 30px
-    background-color transparent
-    border 2px solid rgba(255,255,255,0.8)
-    color white
-  button:hover
-    cursor pointer
-    transform scale(1.01)
-
-.landing_right
-  position relative
-  width 100%
-
-.info_container
-  position absolute
-  height 250px
-  width 450px
-  bottom 0
-  right 0
-  padding 30px
-
-.info_title
-  font-size 20px
-  width 200px
-  margin-bottom 20px
-
-.info_body
-  width 300px
-  margin-bottom 10px
-  text-size 17px

@@ -7,21 +7,28 @@ text = #1a1a1b
 money = #24c157
 my-grey = #565656
 
-// cant be fixed height but its children should be
 .showcase
   display flex
   flex-direction row
-  align-items center
   max-width 1200px
   width 100%
-  margin 20px auto
+  margin 20px 0
+  margin-left 100px
+  flex-wrap wrap
+  align-items center
+  @media screen and (max-width: 1050px)
+    justify-content center
+    margin 0 auto
+    margin-top 20px
+    max-width 800px
+
 
 .slideshow_container
   display flex
   flex-direction column
   align-items center
   justify-content center
-  height 550px
+  height 610px
   max-width 460px
   width 100%
   border-radius 5px
@@ -29,6 +36,14 @@ my-grey = #565656
   background grad
   box-shadow 5px 5px 30px rgba(0,0,0,0.5)
   z-index 2
+  @media screen and (max-width: 1050px)
+    transform translate(0,0)
+    height 90vh
+    width 60vw
+  @media screen and (max-width: 600px)
+    width 100vw
+    height 80vh
+    border-radius 0px
 
 .package_title
   font-size 20px
@@ -40,33 +55,55 @@ my-grey = #565656
   border-radius 5px
   box-shadow 5px 5px 60px rgba(0,0,0,0.4)
 
-
 .prompter
   display flex
   justify-content flex-end
-  height 500px
+  height 580px
   max-width 540px
   width 100%
   background-color white
   border 1px solid grey
   border-radius 10px
   transform translate(-50px,0)
+  margin-right 50px
   z-index 1
+  position relative
+  @media screen and (max-width: 1050px)
+    transform translate(0,0)
+    justify-content center
+    max-width none
+    width 100%
+    margin 0
+    height 650px
+  @media screen and (max-width: 600px)
+    height 890px
+    border-radius 0px
 
 .package_details
   position relative
   color black
   padding 20px
   width 400px
+  @media screen and (max-width: 1050px)
+    width 100%
+    padding 20vw
+  @media screen and (max-width: 600px)
+    padding 13vw
+    padding-right 20px
 
 .package_header
   margin-bottom 10px
+  @media screen and (max-width: 600px)
+    margin-top 40px
 
 .package_title
   font-family 'Droid Sans'
   font-size 30px
   margin-bottom 10px
   color money
+  // color text
+  @media screen and (max-width: 1050px)
+    font-size 3vh
 
 .package_price
   font-family 'Lato'
@@ -80,6 +117,14 @@ my-grey = #565656
   font-family 'Open Sans'
   font-size 18px
   color text
+  p
+    margin-bottom 10px
+  ul
+    padding 0 15px
+    margin-bottom 10px
+    li
+      list-style initial
+      padding 3px
 
 .package_footer
   box-sizing border-box
@@ -107,6 +152,24 @@ my-grey = #565656
 
 .register_button:hover
   cursor pointer
+  outline none
+
+.register_button:active
+  box-shadow 2px 5px 10px rgba(230, 57, 139, 0.3)
+  outline none
+  filter brightness(0.9)
+
+.register_button:active::before
+  content ""
+  position absolute
+  top 0
+  left 0
+  bottom 0
+  right 0
+  background-color transparent
+  border-radius 40px
+  box-shadow 2px 3px 5px rgba(0,0,0,0.4)
+  z-index -1
 
 .register_button::before
   content ""
@@ -117,7 +180,7 @@ my-grey = #565656
   right 0
   background-color transparent
   border-radius 40px
-  box-shadow 7px 5px 15px rgba(0,0,0,0.2)
+  box-shadow 7px 5px 15px rgba(0,0,0,0.3)
   z-index -1
 
 .slideshow_switcher
@@ -147,9 +210,11 @@ my-grey = #565656
   display flex
   flex-direction column
   flex-wrap wrap
-  height 210px
+  height 240px
   font-weight bold
   margin-top 20px
+  @media screen and (max-width: 600px)
+    height 500px
 
 label
   display block
@@ -157,6 +222,7 @@ label
 
 input
   display block
+  width 200px
   height 20px
   margin 10px 0
   border 1px solid title-blue
@@ -166,12 +232,68 @@ input
 
 .wrapped
   margin-left 20px
+  @media screen and (max-width: 600px)
+    margin 0
+    margin-top 10px
 
 select
   height 42px
-  width 70px
+  width 100px
   background-color white
   border 1px solid title-blue
   outline none
   padding 5px
+  margin 10px 0
+
+.left_button
+  position absolute
+  top 10px
+  right 60px
+  display flex
+  justify-content center
+  align-items center
+  z-index 2
+  button
+    height 40px
+    width 40px
+    background-color transparent
+    border 2px solid rgba(255,255,255,0.3)
+    color money
+    font-weight bold
+    box-shadow -2px 2px 7px rgba(0,0,0,0.3)
+    outline none
+  button:hover
+    border 2px solid rgba(255,255,255,0.8)
+    cursor pointer
+  button:active
+    box-shadow -0px 0px 3px rgba(0,0,0,0.3)
+
+.right_button
+  position absolute
+  top 10px
+  right 10px
+  display flex
+  justify-content center
+  align-items center
+  z-index 2
+  button
+    height 40px
+    width 40px
+    background-color transparent
+    border 2px solid rgba(255,255,255,0.3)
+    color money
+    font-weight bold
+    box-shadow 2px 2px 7px rgba(0,0,0,0.3)
+    outline none
+  button:hover
+    border 2px solid rgba(255,255,255,0.8)
+    cursor pointer
+  button:active
+    box-shadow -0px 0px 3px rgba(0,0,0,0.3)
+
+.add_info
+  margin-bottom 20px
+  width 200px
+  height 20px
+  padding 10px
   margin 10px 0

@@ -30,6 +30,6 @@ view model =
               countdownItem "Days" model.days
               , countdownItem "Hours" model.hours
               , countdownItem "Minutes" model.minutes
-              , countdownItem "seconds" model.seconds
+              , countdownItem "Seconds" model.seconds
              ]
         ]

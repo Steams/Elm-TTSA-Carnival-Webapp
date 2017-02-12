@@ -11,8 +11,8 @@ import Slideshow.Types exposing (..)
 (=>) : a -> b -> (a,b)
 (=>) = (,)
 
-dot : Int -> Int -> Html Msg
-dot position active =
+display_dot : Int -> Int -> Html Msg
+display_dot position active =
     div [ classList [("dot",True),("active",active == position)], onClick <| SetSlideshowPosition position] []
 
 proportional_width : Int -> Int -> Int
@@ -35,7 +35,7 @@ view model =
         Just slide ->
             div [ class "slideshow_container"]
                 [
-                  Array.indexedMap (\index a -> dot index model.active_slide) model.slides
+                  Array.indexedMap (\index a -> display_dot index model.active_slide) model.slides
                     |> Array.toList
                     |> div [ class "slideshow_switcher" ]
                 ,img [src slide.url, class "image_canvas", style [
