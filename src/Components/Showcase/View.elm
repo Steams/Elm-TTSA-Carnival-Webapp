@@ -1,7 +1,7 @@
 module Showcase.View exposing (..)
 
-import Html exposing (Html, button, div, text, program, ul, li, img, span,input, label)
-import Html.Attributes exposing (class, classList, src, height, width,type_, placeholder)
+import Html exposing (Html, button, div, text, program, ul, li, img, span,input, label, textarea, select, option)
+import Html.Attributes exposing (class, classList, src, height, width,type_, placeholder, value)
 import Array exposing (get)
 import Html.Events exposing (onClick)
 
@@ -26,6 +26,32 @@ right_button =
 slideshow : Slideshow.Model -> Html Slideshow.Msg
 slideshow = Slideshow.view
 
+registration : Html Msg
+registration =
+    div [ class "registration" ]
+        [
+          label [] [text "Name"]
+        , input [type_ "text", placeholder "Nice to meat you"] []
+        , label [] [text "Email"]
+        , input [type_ "text", placeholder "email@domain.com"] []
+        , label [] [text "Additional Info"]
+        , textarea [] []
+        , label [ class "wrapped" ] [text "Gender"]
+        , select [ class "wrapped" ]
+            [
+              option [value "male"] [text "Male"]
+             ,option [value "female"] [text "Female"]
+            ]
+        , label [ class "wrapped" ] [text "Size"]
+        , select [ class "wrapped" ]
+            [
+              option [value "sml"] [text "Sml"]
+             ,option [value "med"] [text "Med"]
+             ,option [value "lrg"] [text "Lrg"]
+            ]
+        ]
+
+
 package_details : String -> String -> Html Msg
 package_details name desc=
     div [ class "package_details" ]
@@ -42,18 +68,11 @@ package_details name desc=
                   text desc
                  ]
             ]
+        , registration
         ,div [ class "package_footer" ]
             [
              button [ class "register_button" ] [ text "Register" ]
             ]
-        ]
-
-registration : Html Msg
-registration =
-    div [ class "registration" ]
-        [
-          label [] [text "Name"]
-        , input [type_ "text", placeholder "Name"] []
         ]
 
 prompter : Maybe Package -> Html Msg
@@ -63,7 +82,6 @@ prompter m =
             div [ class "prompter"]
                 [
                   package_details package.title package.description
-                -- , registration
                 ]
         Nothing -> div [] []
 

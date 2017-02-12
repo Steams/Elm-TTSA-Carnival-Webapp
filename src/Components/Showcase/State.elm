@@ -11,24 +11,68 @@ import Slideshow.Types exposing (Slide)
 -- Init
 
 -- set slideshow inital model to from the first package
+
+package_1 : Package
+package_1 = Package "Female Bikini" "Description" <| Array.fromList
+                [
+                  Slide "../res/package_1_image_1.jpeg" 1066 1600
+                , Slide "../res/package_1_image_2.jpeg" 1066 1600
+                , Slide "../res/package_1_image_3.jpeg" 1066 1600
+                , Slide "../res/package_1_image_4.jpeg" 1066 1600
+                ]
+
+package_2 : Package
+package_2 = Package "Female Monokini" "Description" <| Array.fromList
+                [
+                  Slide "../res/package_2_image_1.jpeg" 1066 1600
+                , Slide "../res/package_2_image_2.jpeg" 1066 1600
+                ]
+
+package_3 : Package
+package_3 = Package "Female Tube Top" "Description" <| Array.fromList
+                [
+                  Slide "../res/package_3_image_1.jpeg" 1066 1600
+                , Slide "../res/package_3_image_2.jpeg" 720 900
+                ]
+
+package_4 : Package
+package_4 = Package "Male Tank & T-Shirt" "Description" <| Array.fromList
+                [
+                  Slide "../res/package_4_image_1.jpeg" 1066 1600
+                , Slide "../res/package_4_image_2.jpeg" 1066 1600
+                , Slide "../res/package_4_image_3.jpeg" 1066 1600
+                , Slide "../res/package_4_image_4.jpeg" 1600 1236
+                ]
+
+package_5 : Package
+package_5 = Package "Female Tank & T-Shirt" "Description" <| Array.fromList
+                [
+                  Slide "../res/package_5_image_1.jpeg" 1066 1600
+                , Slide "../res/package_5_image_2.jpeg" 1066 1600
+                , Slide "../res/package_5_image_3.jpeg" 1600 1236
+                , Slide "../res/package_5_image_4.jpeg" 1600 1236
+                ]
+
+package_6 : Package
+package_6 = Package "Drink Band" "Description" <| Array.fromList
+                [
+                  Slide "../res/package_6_image_1.jpeg" 430 600
+                ]
+
 initialModel : Model
 initialModel = {
         packages =
             Array.fromList
             [
-             Package "Package 1" "Some description" <| Array.fromList
-                [
-                  Slide "../res/1.png" 708 280
-                ,Slide "../res/2.png" 968 574
-                ]
-            ,Package "Package 2" "Some OTHER description" <| Array.fromList
-                [
-                  Slide "../res/3.png" 708 280
-                ,Slide "../res/4.png" 968 574
-                ]
+              package_1
+             ,package_2
+             ,package_3
+             ,package_4
+             ,package_5
+             ,package_6
             ]
        ,active_package = 0
-       ,slideshow = Slideshow.Types.Model (Array.fromList [Slideshow.Types.Slide "../res/1.png" 708 280 ,Slideshow.Types.Slide "../res/2.png" 968 574]) 0
+       ,slideshow = Slideshow.Types.Model package_1.slides 0
        }
 
 getSlideshow : Model -> Int -> Slideshow.Model
