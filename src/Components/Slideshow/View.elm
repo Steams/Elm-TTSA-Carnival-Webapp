@@ -34,7 +34,6 @@ view : Model -> Html Msg
 view model =
     case (Array.get model.active_slide model.slides) of
         Just slide ->
-            -- div [ class "slideshow_container"]
             div [ class "slideshow_container", onTouchStart StartedTouch, onTouchEnd EndedTouch]
                 [
                   Array.indexedMap (\index a -> display_dot index model.active_slide) model.slides

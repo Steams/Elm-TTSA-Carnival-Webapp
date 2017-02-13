@@ -53,7 +53,7 @@ update msg model =
                 distance = (abs (start - end))
                 delta_time = (abs (time - model.touch_time))
                 speed = distance/delta_time
-                swipe = (distance > 10) && (speed > 1)
+                swipe = (distance > 10) && (speed > 0.7)
                 _ = log "distance" distance
                 _ = log "speed" speed
             in

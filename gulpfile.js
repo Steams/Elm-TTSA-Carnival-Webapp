@@ -1,15 +1,13 @@
 var gulp = require('gulp'),
-    elm  = require('gulp-elm')
+    elm  = require('gulp-elm'),
     stylus = require('gulp-stylus'),
     watch = require('gulp-watch'),
-    concat = require('gulp-concat')
+    concat = require('gulp-concat'),
     server = require('gulp-server-livereload')
-
-    //changed = require('gulp-changed'),
-    //browserify = require('browserify'),
-    //watchify = require('watchify'),
-    //reactify = require('reactify'),
 ;
+
+const imagemin = require('gulp-imagemin');
+
 
 
 gulp.task('webserver', function() {
@@ -17,7 +15,7 @@ gulp.task('webserver', function() {
     .pipe(server({
       livereload: true,
       directoryListing: true,
-      open: true,
+      open: true
     }));
 });
 
@@ -29,19 +27,6 @@ var notify = function(message) {
     console.log(message);
 };
 
-// gulp.task('elm-init', elm.init);
-
-// gulp.task('compileElm', ['elm-init'], function(){
-//     return gulp.src('src/**/*.elm')
-//         .pipe(watch('src/**/*.elm',function(event){
-//             notify("Elm Changed!");
-//         }))
-//         .pipe(elm())
-//         // .pipe(concat('elmapp.compiled.js'))
-//         .pipe(gulp.dest('app'))
-//         // .pipe(livereload())
-//     ;
-// });
 
 
 gulp.task('compileStylus',function(){
@@ -49,13 +34,21 @@ gulp.task('compileStylus',function(){
         .pipe(watch('src/**/*.styl',function(event){
             notify("Styles Changed!");
         }))
-    //.pipe(changed('app'))
         .pipe(stylus())
         .pipe(gulp.dest('app'))
-        // .pipe(livereload())
+    ;
+});
+
+gulp.task('imageMin',function(){
+    return gulp.src('res/*')
+        .pipe(watch('res/*',function(event){
+            notify("Image found");
+        }))
+        .pipe(imagemin())
+        .pipe(gulp.dest('app/res'))
     ;
 });
 
 
 // gulp.task('default',['webserver','compileStylus']);
-gulp.task('default',['compileStylus']);
+gulp.task('default',['compileStylus','imageMin']);

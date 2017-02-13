@@ -13,8 +13,6 @@ type Msg
     | TouchWithTime Touch Time
     | EndTouchWithTime Touch Time
     | EndedTouch Touch
-    -- | CurrentTime Result
-    -- | SetTime Time
 
 type alias Slide = {url : String, width : Int, height : Int }
 
