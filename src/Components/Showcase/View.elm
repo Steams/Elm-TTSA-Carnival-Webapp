@@ -35,7 +35,7 @@ registration =
         , label [] [text "Email"]
         , input [type_ "text", placeholder "email@domain.com", onInput EmailInput] []
         , label [] [text "Additional Info"]
-        , textarea [class "add_info", onInput AdditionalInput ] []
+        , textarea [class "add_info", onInput AdditionalInput , placeholder "Choice of tank or t shirt etc.."] []
         , label [ class "wrapped" ] [text "Sex"]
         , select [ class "wrapped", onInput GenderInput]
             [
