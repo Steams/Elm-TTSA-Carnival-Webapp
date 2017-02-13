@@ -1,12 +1,24 @@
  <!doctype html>
  <html>
-     <!-- place me in /app folder to launch app -->
      <head>
         <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Josefin+Slab|Lato|Open+Sans|Ubuntu|Arvo" rel="stylesheet">
-         <link rel="stylesheet" href="main.css" type ="text/css"/>
+        <link rel="stylesheet" href="main.css" type ="text/css"/>
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
      </head>
     <body>
         <div></div>
+        <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCBKHL7QvE2ePVnM5SkMqJB32QjJ9uJJAg",
+            authDomain: "ttsa-carnival.firebaseapp.com",
+            databaseURL: "https://ttsa-carnival.firebaseio.com",
+            storageBucket: "ttsa-carnival.appspot.com",
+            messagingSenderId: "655314437086"
+        };
+        firebase.initializeApp(config);
+        </script>
         <script src="main.js"></script>
         <script>Elm.Main.embed(document.querySelector("div"));</script>
     </body>

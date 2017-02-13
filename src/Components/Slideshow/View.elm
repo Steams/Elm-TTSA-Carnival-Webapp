@@ -4,6 +4,7 @@ import Html exposing (Html, button, div, text, program, ul, li, img, span)
 import Html.Attributes exposing (class, classList, src, height, width, style)
 import Html.Events exposing (onClick)
 import Array
+import TouchEvents exposing (..)
 
 
 import Slideshow.Types exposing (..)
@@ -27,13 +28,14 @@ proportional_height width height =
     if height < width then
         ceiling (90 * (toFloat height / toFloat width)) + 4
     else
-        90
+        75
 
 view : Model -> Html Msg
 view model =
     case (Array.get model.active_slide model.slides) of
         Just slide ->
-            div [ class "slideshow_container"]
+            -- div [ class "slideshow_container"]
+            div [ class "slideshow_container", onTouchStart StartedTouch, onTouchEnd EndedTouch]
                 [
                   Array.indexedMap (\index a -> display_dot index model.active_slide) model.slides
                     |> Array.toList

@@ -1,7 +1,6 @@
 module Showcase.State exposing (..)
 
 import Html exposing (Html,li,ul,p,text,div)
-import Task exposing (Task, andThen, mapError, succeed, fail)
 import Html.Attributes exposing (..)
 import Array
 import Http
@@ -11,8 +10,8 @@ import Slideshow.Types exposing (Slide)
 
 import Showcase.Types exposing (..)
 import Debug exposing (log)
-import Json.Encode exposing (..)
-import Json.Decode exposing (..)
+import Json.Encode
+import Json.Decode
 
 
 -- Init
@@ -31,13 +30,13 @@ package_1_description =
             , li [] [text "Premium drinks on the road"]
             , li [] [text "Breakfast"]
             ]
-         , p [] [text "Early bird offer valid until Friday 17 February"]
+         , p [] [text "Early bird offer valid until Friday February 17"]
         ]
 
 package_1 : Package
 package_1 =
     {
-      title = "Bikini"
+      title = "Female Costume (Top and Bottom)"
     , cost = "$6000 | early bird offer $5500"
     , description = package_1_description
     , slides = Array.fromList
@@ -200,7 +199,7 @@ initialModel = {
              ,package_6
             ]
        ,active_package = 0
-       ,slideshow = Slideshow.Types.Model package_1.slides 0
+       ,slideshow = Slideshow.Types.Model package_1.slides 0 0 0 0
        ,info =
             {
               name = ""
@@ -220,6 +219,9 @@ getSlideshow model package_index =
                          package.slides
                      Nothing -> Array.fromList []
         , active_slide = 0
+        , touch_start = 0
+        , touch_time = 0
+        , end_time = 0
     }
 
 -- UPDATE
@@ -236,12 +238,9 @@ pred_package model =
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        Success ->
+        PostResponse res->
             (model,Cmd.none)
-        Fail ->
-            (model,Cmd.none)
-        Post res->
-            (model,Cmd.none)
+
         NextPackage ->
             let
                 new_index = succ_package model
@@ -301,7 +300,7 @@ update msg model =
               _ = log "name" model.info.name
               _ = log "gender" model.info.gender
               _ = log "size" model.info.size
-              form = object [
+              form = Json.Encode.object [
                     ("name", Json.Encode.string model.info.name)
                   , ("gender", Json.Encode.string model.info.gender)
                   , ("size", Json.Encode.string model.info.size)
@@ -309,8 +308,7 @@ update msg model =
                   , ("color", Json.Encode.string model.info.color)
                   , ("email", Json.Encode.string model.info.email)
                   ]
-              form_json = encode 1 form
-              _ = log "json" form_json
+              _ = log "json" form
             in
               (model,postOrder form)
             -- clear model info here
@@ -320,6 +318,8 @@ subscriptions : Sub Msg
 subscriptions =
     Sub.batch [ Sub.map UpdateSlideshow Slideshow.subscriptions ]
 
+field : String -> Json.Decode.Decoder a -> Json.Decode.Decoder a
+field = Json.Decode.field
 
 orderDecoder : Json.Decode.Decoder Form
 orderDecoder = Json.Decode.map6 Form
@@ -333,39 +333,9 @@ orderDecoder = Json.Decode.map6 Form
 -- Http
 
 postOrder : Json.Encode.Value -> Cmd Msg
-postOrder form_json =
+postOrder info =
   let
-    url = "http://localhost:8080/order"
+    url = "http://localhost:5000/orders"
   in
-      Http.send Post (Http.post url (Http.jsonBody form_json) Json.Decode.string)
-
--- postJson : Json.Decode.Decoder value -> String -> Json.Encode.Value -> Platform.Task Http.Error value
--- postJson decoder url json =
---     let
---         body =
---             json
---                 -- encode json value into a String using 0 indent
---                 |> Json.Encode.encode 0
---                 -- convert String into an Http.Body
---                 |> Http.stringBody
-
---         request =
---             { verb = "POST"
---             , headers = [ ("Content-Type", "application/json") ]
---             , url = url
---             , body = body
---             }
---     in
---         request
---             |> Http.send { timeout = 0 , onStart = Nothing , onProgress = Nothing , desiredResponseType = Nothing , withCredentials = False}
-
-
--- fromJson : Json.Decoder a -> Task RawError Response -> Task Error a
--- fromJson decoder response =
---   let decode str =
---         case Json.decodeString decoder str of
---           Ok v -> succeed v
---           Err msg -> fail (UnexpectedPayload msg)
---   in
---       mapError promoteError response
---         andThen handleResponse decode
+      Http.send PostResponse <|
+          Http.post url (Http.stringBody "application/json" (Json.Encode.encode 0 info)) Json.Decode.string
