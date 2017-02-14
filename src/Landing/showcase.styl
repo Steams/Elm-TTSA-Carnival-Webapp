@@ -79,7 +79,7 @@ my-grey = #565656
     margin 0
     height 650px
   @media screen and (max-width: 600px)
-    height 890px
+    height 100%
     border-radius 0px
 
 .package_details
@@ -130,60 +130,70 @@ my-grey = #565656
 
 .package_footer
   box-sizing border-box
-  position absolute
-  height 100px
+  height 50px
   width 100%
   display flex
   align-items center
   justify-content center
-  bottom 0
-  left 0
+  @media screen and (max-width: 600px)
+    height 80px
 
-.register_button
+fancyButton()
   position relative
   height 50px
-  width 250px
-  background button-grad
   border-radius 40px
   border 1px solid rgba(255,255,255,0.3)
   color white
   font-size 20px
   font-family 'Arvo'
+  outline none
+  &:hover
+    cursor pointer
+    outline none
+  &:active
+    box-shadow 2px 5px 10px rgba(230, 57, 139, 0.3)
+    outline none
+    filter brightness(0.9)
+  &::before
+    content ""
+    position absolute
+    top 0
+    left 0
+    bottom 0
+    right 0
+    background-color transparent
+    border-radius 40px
+    box-shadow 7px 5px 15px rgba(0,0,0,0.3)
+    z-index -1
+  &:active::before
+    content ""
+    position absolute
+    top 0
+    left 0
+    bottom 0
+    right 0
+    background-color transparent
+    border-radius 40px
+    box-shadow 2px 3px 5px rgba(0,0,0,0.4)
+    z-index -1
+
+.register_button
+  fancyButton()
+  width 250px
+  background button-grad
   box-shadow 5px 10px 20px rgba(230, 57, 139, 0.3)
-  outline none
 
-.register_button:hover
-  cursor pointer
-  outline none
+.register_cancel,.register_submit
+  fancyButton()
+  width 140px
+  border-radius 5px
 
-.register_button:active
-  box-shadow 2px 5px 10px rgba(230, 57, 139, 0.3)
-  outline none
-  filter brightness(0.9)
-
-.register_button:active::before
-  content ""
-  position absolute
-  top 0
-  left 0
-  bottom 0
-  right 0
-  background-color transparent
-  border-radius 40px
-  box-shadow 2px 3px 5px rgba(0,0,0,0.4)
-  z-index -1
-
-.register_button::before
-  content ""
-  position absolute
-  top 0
-  left 0
-  bottom 0
-  right 0
-  background-color transparent
-  border-radius 40px
-  box-shadow 7px 5px 15px rgba(0,0,0,0.3)
-  z-index -1
+.register_cancel
+  background-color grey
+  margin-right 10px
+.register_submit
+  background-color #77dd77
+  margin-left 10px
 
 .slideshow_switcher
   display flex
@@ -216,7 +226,7 @@ my-grey = #565656
   font-weight bold
   margin-top 20px
   @media screen and (max-width: 600px)
-    height 500px
+    height 450px
 
 label
   display block
@@ -291,3 +301,7 @@ slideshowButton()
   height 20px
   padding 10px
   margin 10px 0
+
+.fine_print
+  color my-grey
+  font-size 12px

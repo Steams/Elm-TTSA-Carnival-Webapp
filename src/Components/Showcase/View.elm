@@ -36,12 +36,6 @@ registration =
         , input [type_ "email", placeholder "email@domain.com", onInput EmailInput] []
         , label [] [text "Additional Info"]
         , textarea [class "add_info", onInput AdditionalInput , placeholder "Choice of tank or t shirt etc.."] []
-        , label [ class "wrapped" ] [text "Sex"]
-        , select [ class "wrapped", onInput GenderInput]
-            [
-              option [value "Female"] [text "Female"]
-             ,option [value "Male"] [text "Male"]
-            ]
         , label [ class "wrapped" ] [text "Size"]
         , select [ class "wrapped", onInput SizeInput ]
             [
@@ -58,45 +52,70 @@ registration =
         ]
 
 
-package_details : String -> String -> Html Msg -> Html Msg
-package_details name cost desc=
-    div [ class "package_details" ]
-        [
-         div [ class "package_header" ]
-             [
-              div [ class "package_title" ] [text name]
-             ,div [ class "package_price" ] [text cost]
-             ]
-        ,div [ class "package_body" ]
-            [
-             div [class "package_description" ]
-                 [
-                  desc
-                 ]
-            ]
-        , registration
-        ,div [ class "package_footer" ]
-            [
-             button [ class "register_button", onClick Submit ] [ text "Register" ]
-            ]
-        ]
+package_details : Bool -> String -> String -> Html Msg -> Html Msg
+package_details showForm name cost desc=
+    if showForm then
+        div [ class "package_details" ]
+          [
+          div [ class "package_header" ]
+              [
+                div [ class "package_title" ] [text name]
+              ,div [ class "package_price" ] [text cost]
+              ]
+          ,div [ class "package_body" ]
+              [
+              div [class "package_description" ]
+                  [
+                    desc
+                  ]
+              ]
+          , registration
+          ,div [ class "package_footer" ]
+              [
+               button [ class "register_cancel", onClick Cancel ] [ text "Cancel" ]
+              ,button [ class "register_submit", onClick Submit ] [ text "Submit" ]
+              ]
+          ]
+    else
+        div [ class "package_details" ]
+          [
+          div [ class "package_header" ]
+              [
+                div [ class "package_title" ] [text name]
+              ,div [ class "package_price" ] [text cost]
+              ]
+          ,div [ class "package_body" ]
+              [
+              div [class "package_description" ]
+                  [
+                    desc
+                  ]
+              ]
+          ,div [ class "package_footer" ]
+              [
+              button [ class "register_button", onClick Register ] [ text "Register" ]
+              ]
+          ]
 
-prompter : Maybe Package -> Html Msg
-prompter m =
-    case m of
-        Just package ->
-            div [ class "prompter"]
-                [
-                   left_button
-                 , right_button
-                 , package_details package.title package.cost package.description
-                ]
-        Nothing -> div [] []
+prompter : Model -> Html Msg
+prompter model =
+    let
+        pkg = get model.active_package model.packages
+    in
+        case pkg of
+            Just package ->
+                div [ class "prompter"]
+                    [
+                      left_button
+                    , right_button
+                    , package_details model.showForm package.title package.cost package.description
+                    ]
+            Nothing -> div [] []
 
 view : Model -> Html Msg
 view model =
     div [ class "showcase" ]
         [
          Html.map UpdateSlideshow <| slideshow model.slideshow
-        ,prompter <| get model.active_package model.packages
+        ,prompter model
         ]

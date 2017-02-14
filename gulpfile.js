@@ -51,4 +51,4 @@ gulp.task('imageMin',function(){
 
 
 // gulp.task('default',['webserver','compileStylus']);
-gulp.task('default',['compileStylus','imageMin']);
+gulp.task('default',['compileStylus']);

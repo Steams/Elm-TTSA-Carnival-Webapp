@@ -21,7 +21,6 @@ empty_order =
       name = ""
     , email = ""
     , additional = ""
-    , gender = "Female"
     , size = "Sml"
     , color = "White"
     }
@@ -39,6 +38,7 @@ package_1_description =
             , li [] [text "Breakfast"]
             ]
          , p [] [text "Early bird offer valid until Friday February 17"]
+         , p [class "fine_print"] [text " You will be notify by email when measurements are to be taken. Size choice not nessesary"]
         ]
 
 package_1 : Package
@@ -68,6 +68,7 @@ package_2_description =
             , li [] [text "Premium drinks on the road"]
             , li [] [text "Breakfast"]
             ]
+        , p [class "fine_print"] [text " You will be notify by email when measurements are to be taken. Size choice not nessesary"]
         ]
 
 package_2 : Package
@@ -209,6 +210,7 @@ initialModel = {
        ,active_package = 0
        ,slideshow = Slideshow.Types.Model package_1.slides 0 0 0 0
        ,order = empty_order
+       ,showForm = False
        }
 
 getSlideshow : Model -> Int -> Slideshow.Model
@@ -248,7 +250,7 @@ update msg model =
                 new_slideshow = getSlideshow model new_index
             in
             ({model | active_package = new_index
-             , slideshow = new_slideshow }, Cmd.none)
+             , slideshow = new_slideshow, showForm = False}, Cmd.none)
 
         PrevPackage ->
             let
@@ -257,7 +259,7 @@ update msg model =
                 new_slideshow = getSlideshow model new_index
             in
             ({model | active_package = new_index
-             , slideshow = new_slideshow }, Cmd.none)
+             , slideshow = new_slideshow, showForm = False}, Cmd.none)
 
         UpdateSlideshow subMsg ->
             let
@@ -280,11 +282,6 @@ update msg model =
                 order = model.order
             in
                 ({model | order = { order | additional = value } },Cmd.none)
-        GenderInput value ->
-            let
-                order = model.order
-            in
-                ({model | order = { order | gender = value } },Cmd.none)
         ColorInput value ->
             let
                 order = model.order
@@ -295,16 +292,24 @@ update msg model =
                 order = model.order
             in
                 ({model | order = { order | size = value } },Cmd.none)
+
+        Register ->
+            let
+                _ = log "Register" 1
+            in
+                ({model | showForm = True},Cmd.none)
+
+        Cancel ->
+                ({model | showForm = False, order = empty_order},Cmd.none)
+
         Submit ->
             let
               _ = log "name" model.order.name
-              _ = log "gender" model.order.gender
               _ = log "size" model.order.size
               package = Maybe.withDefault (Package "" "" (div [] []) (Array.fromList []) ) (Array.get model.active_package model.packages)
               order = Encode.object <|
                       [
                         ("name", string model.order.name)
-                      , ("gender", string model.order.gender)
                       , ("size", string model.order.size)
                       , ("additional", string model.order.additional)
                       , ("color", string model.order.color)
@@ -313,7 +318,7 @@ update msg model =
                       ]
               _ = log "order json" order
             in
-              ({model | order = empty_order},postOrder order)
+              ({model | order = empty_order, showForm = False},postOrder order)
 
 -- Subscriptions
 

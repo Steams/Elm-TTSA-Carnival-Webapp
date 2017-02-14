@@ -15,10 +15,11 @@ type Msg
     | NameInput String
     | EmailInput String
     | AdditionalInput String
-    | GenderInput String
     | ColorInput String
     | SizeInput String
+    | Register
     | Submit
+    | Cancel
     | PostResponse (Result Http.Error String)
 
 -- Types
@@ -37,7 +38,6 @@ type alias Order =
       name : String
     , email : String
     , additional : String
-    , gender : String
     , size : String
     , color : String
     }
@@ -48,4 +48,5 @@ type alias Model =
        , active_package : Int
        , slideshow : Slideshow.Model
        , order : Order
+       , showForm : Bool
     }

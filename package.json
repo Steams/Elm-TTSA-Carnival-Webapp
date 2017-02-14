@@ -1,20 +1,17 @@
 {
-  "name": "ttsa_carnival",
+  "name": "ttsa-rest-api",
   "version": "1.0.0",
   "description": "",
-  "main": "gulpfile.js",
-  "dependencies": {
-    "gulp-concat": "^2.6.1",
-    "gulp-elm": "^0.6.1",
-    "gulp-livereload": "^3.8.1",
-    "gulp-plumber": "^1.1.0"
-  },
+  "main": "Server.js",
+  "dependencies": {},
   "devDependencies": {
-    "gulp-imagemin": "^3.1.1"
+    "mongoose": "^4.8.2"
+      ,"body-parser": "^1.13.3"
+      ,"express": "^4.13.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Radcliffe Robinson",
+  "author": "",
   "license": "ISC"
 }

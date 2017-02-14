@@ -23,7 +23,7 @@ type alias TimeRemaining = Int
 
 carnival_date : Time
 carnival_date
-    = case (Date.fromString "2017/03/16") of
+    = case (Date.fromString "2017/03/18") of
           Ok date ->
               Date.toTime date
           Err err ->
