@@ -1,6 +1,6 @@
 module Countdown.View exposing (..)
 
-import Html exposing (Html, button, div, text, program, ul, li)
+import Html exposing (Html, button, div, text, program, ul, li, p, span)
 import Html.Attributes exposing (class,classList)
 
 import Countdown.Types exposing (..)
@@ -32,4 +32,5 @@ view model =
               , countdownItem "Minutes" model.minutes
               , countdownItem "Seconds" model.seconds
              ]
+         ,div [class "countdown_title"] [ span [class "countdown_title_text"] [text "Until RINGROAD" ]]
         ]

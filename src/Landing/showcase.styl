@@ -18,7 +18,7 @@ my-grey = #565656
   margin-left 100px
   flex-wrap wrap
   align-items center
-  @media screen and (max-width: 1050px)
+  @media screen and (max-width: 1140px)
     justify-content center
     margin 0 auto
     margin-top 20px
@@ -30,7 +30,7 @@ my-grey = #565656
   flex-direction column
   align-items center
   justify-content center
-  height 610px
+  height 600px
   max-width 460px
   width 100%
   border-radius 5px
@@ -38,15 +38,15 @@ my-grey = #565656
   background grad
   box-shadow 5px 5px 30px rgba(0,0,0,0.5)
   z-index 2
-  @media screen and (max-width: 1050px)
+  @media screen and (max-width: 1140px)
     transform translate(0,0)
     height 90vh
     width 60vw
+    border-radius 5px 5px 0px 0px
   @media screen and (max-width: 600px)
     max-height 450px
     width 100vw
     height 130vw
-    border-radius 0px
 
 .package_title
   font-size 20px
@@ -62,32 +62,35 @@ my-grey = #565656
   display flex
   justify-content flex-end
   height 580px
-  max-width 540px
+  max-width 600px
   width 100%
   background-color white
   border 1px solid grey
   border-radius 10px
   transform translate(-50px,0)
-  margin-right 50px
   z-index 1
   position relative
-  @media screen and (max-width: 1050px)
+  padding-right 30px
+  @media screen and (max-width: 1140px)
+    padding-right 0px
     transform translate(0,0)
     justify-content center
     max-width none
     width 100%
     margin 0
     height 650px
+    border none
   @media screen and (max-width: 600px)
     height 100%
     border-radius 0px
+    border none
 
 .package_details
   position relative
   color black
   padding 20px
   width 400px
-  @media screen and (max-width: 1050px)
+  @media screen and (max-width: 1140px)
     width 100%
     padding 20vw
   @media screen and (max-width: 600px)
@@ -104,7 +107,7 @@ my-grey = #565656
   margin-bottom 10px
   color my-pink
   font-weight bold
-  @media screen and (max-width: 1050px)
+  @media screen and (max-width: 1140px)
     font-size 17px
 
 .package_price
@@ -308,4 +311,4 @@ slideshowButton()
 
 .fine_print
   color my-grey
-  font-size 12px
+  font-size 13px

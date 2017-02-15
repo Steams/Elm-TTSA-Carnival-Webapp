@@ -1,6 +1,7 @@
 module Main exposing (..)
 
 import Html exposing (Html, button, div, text, program, ul, li)
+import Html.Attributes exposing (class)
 import Landing
 import Header
 
@@ -67,7 +68,7 @@ subscriptions model =
 
 view : AppModel -> Html AppMsg
 view model =
-    div []
+    div [class "main_container"]
         [
           Html.map HeaderMsg (Header.view model.header)
         , Html.map LandingMsg (Landing.view model.landingModel)

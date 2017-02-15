@@ -25,6 +25,7 @@ title : Html Msg
 title =
     div [ class "hero_title" ]
         [
+         -- img [src "../res/unnamed.png", height 130, width 600] []
          span [class "hero_title_text"] [text "Cosmopolitan"]
         ]
 
@@ -32,8 +33,8 @@ sub_title : Html Msg
 sub_title =
     div [ class "hero_sub_title" ]
         [
-         text "Be part of one of the largest bands for "
-        ,span [ class "highlight" ] [ text " UWI CARNIVAL"]
+         span [class "intro_text"] [text "Be part of one of the largest bands for "]
+        ,span [ class "highlight" ] [ text " UWI CARNIVAL!"]
         ]
 
 hero : Html Msg

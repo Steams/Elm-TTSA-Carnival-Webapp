@@ -6,6 +6,7 @@ dark-purple = #120035
 lighter-purple = #130840
 my-burgundy =#CB1D34
 my-orange = #EF473A
+my-turquoise = #5E6C5D
 
 my-gradient = -webkit-linear-gradient(-65deg, dark-purple 0%, lighter-purple 40%, dark-purple 80%)
 
@@ -13,7 +14,7 @@ my-rad-gradient = -webkit-radial-gradient(circle, dark-purple 0%, lighter-purple
 
 my-orange-gradient = -webkit-linear-gradient(-65deg, my-orange 0%, my-orange 40%, my-burgundy 80%)
 
-grad = -webkit-linear-gradient(45deg, rgba(201, 128, 101, 0.3) 30%, rgba(0, 62, 17, 0.4) 80%)
+grad = -webkit-linear-gradient(-90deg, rgba(201, 128, 101, 0.5) 1%, rgba(0, 62, 17, 0.4) 80%)
 
 //pre load images on startup
 html::after{
@@ -27,6 +28,7 @@ body::before
   // background url('../res/background_1.jpeg')
   background-size cover
   background white
+  // background black
   opacity 1
   top 0
   left 0
@@ -43,7 +45,6 @@ body
   // background-color #140239
   // background-image my-rad-gradient
   background-size cover
-  /* background-color black */
   color white
   font-family Arial
 
@@ -51,7 +52,7 @@ body::after
   content ""
   /* background url('../res/red-noise.png'), grad */
   background-image grad
-  opacity 0.6
+  opacity 1
   top 0
   left 0
   bottom 0
@@ -61,3 +62,6 @@ body::after
 
 li
   list-style none
+
+.main_container
+  overflow hidden
