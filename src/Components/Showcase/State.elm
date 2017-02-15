@@ -130,7 +130,7 @@ package_4_description =
 package_4 : Package
 package_4 =
     {
-      title = "Male Tank & T-Shirt"
+      title = "Male Tank OR T-Shirt"
     , cost = "$3000"
     , description = package_4_description
     , slides = Array.fromList
@@ -160,7 +160,7 @@ package_5_description =
 package_5 : Package
 package_5 =
     {
-      title = "Female Tank & T-Shirt"
+      title = "Female Tank OR T-Shirt"
     , cost = "$3000"
     , description = package_5_description
     , slides = Array.fromList
