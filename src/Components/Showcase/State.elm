@@ -38,7 +38,7 @@ package_1_description =
             , li [] [text "Breakfast"]
             ]
          , p [] [text "Early bird offer valid until Friday February 20th"]
-         , p [class "fine_print"] [text " You will be notifed by email when measurements are to be taken. Size choice not necessary"]
+         , p [class "fine_print"] [text " You will be notifed by email when measurements are to be taken. Size choice not necessary."]
         ]
 
 package_1 : Package
@@ -68,7 +68,7 @@ package_2_description =
             , li [] [text "Premium drinks on the road"]
             , li [] [text "Breakfast"]
             ]
-        , p [class "fine_print"] [text " You will be notified by email when measurements are to be taken. Size choice not necessary"]
+        , p [class "fine_print"] [text " You will be notified by email when measurements are to be taken. Size choice not necessary."]
         ]
 
 package_2 : Package

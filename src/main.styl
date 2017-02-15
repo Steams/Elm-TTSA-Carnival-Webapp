@@ -14,21 +14,21 @@ my-rad-gradient = -webkit-radial-gradient(circle, dark-purple 0%, lighter-purple
 
 my-orange-gradient = -webkit-linear-gradient(-65deg, my-orange 0%, my-orange 40%, my-burgundy 80%)
 
-grad = -webkit-linear-gradient(-90deg, rgba(201, 128, 101, 0.5) 1%, rgba(0, 62, 17, 0.4) 80%)
+grad = -webkit-linear-gradient(-90deg, rgba(201, 128, 101, 1) 1%, rgba(0, 62, 17, 1) 80%)
 
 //pre load images on startup
-html::after{
-    position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
-    content:url("../res/package_1_image_1.jpeg") url("../res/package_1_image_2.jpeg") url("../res/package_1_image_3.jpeg") url("../res/package_1_image_4.jpeg") url("../res/package_2_image_1.jpeg") url("../res/package_2_image_2.jpeg") url("../res/package_3_image_1.jpeg") url("../res/package_3_image_2.jpeg") url("../res/package_4_image_1.jpeg") url("../res/package_4_image_2.jpeg") url("../res/package_4_image_3.jpeg") url("../res/package_4_image_4.jpeg") url("../res/package_5_image_1.jpeg") url("../res/package_5_image_2.jpeg") url("../res/package_5_image_3.jpeg") url("../res/package_5_image_4.jpeg") url("../res/package_6_image_1.jpeg")
-}
+html::after
+    position absolute
+    width 0
+    height 0
+    overflow hidden
+    z-index -1
+    content url("../res/package_1_image_1.jpeg") url("../res/package_1_image_2.jpeg") url("../res/package_1_image_3.jpeg") url("../res/package_1_image_4.jpeg") url("../res/package_2_image_1.jpeg") url("../res/package_2_image_2.jpeg") url("../res/package_3_image_1.jpeg") url("../res/package_3_image_2.jpeg") url("../res/package_4_image_1.jpeg") url("../res/package_4_image_2.jpeg") url("../res/package_4_image_3.jpeg") url("../res/package_4_image_4.jpeg") url("../res/package_5_image_1.jpeg") url("../res/package_5_image_2.jpeg") url("../res/package_5_image_3.jpeg") url("../res/package_5_image_4.jpeg") url("../res/package_6_image_1.jpeg")
 
 body::before
   content ""
-  // background url('../res/ttsa_carnival_design.png')
-  // background url('../res/background_1.jpeg')
+  background url('../res/bg3.jpeg')
   background-size cover
-  background white
-  // background black
   opacity 1
   top 0
   left 0
@@ -36,7 +36,13 @@ body::before
   right 0
   position absolute
   z-index -1
-  filter brightness(0.5)
+  filter brightness(0.8) blur(2px)
+  box-sizing border-box
+  margin -5px
+  transform translate(-4px,0)
+  @media screen and (max-width: 1140px)
+    background white
+    filter brightness(1)
 
 body
   position relative
@@ -46,19 +52,22 @@ body
   // background-image my-rad-gradient
   background-size cover
   color white
-  font-family Arial
+  overflow-x hidden
 
 body::after
   content ""
   /* background url('../res/red-noise.png'), grad */
   background-image grad
-  opacity 1
+  opacity 0.5
   top 0
   left 0
   bottom 0
   right 0
   position absolute
   z-index -1
+  @media screen and (max-width: 1140px)
+    background-image -webkit-linear-gradient(-90deg, rgba(201, 128, 101, 0.5) 10%, rgba(0, 62, 17, 0.4) 30%)
+    opacity 1
 
 li
   list-style none
