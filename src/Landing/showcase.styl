@@ -8,6 +8,7 @@ title-blue = #4c869e
 text = #1a1a1b
 money = #24c157
 my-grey = #565656
+medium-break = 1190px
 
 .showcase
   display flex
@@ -18,7 +19,7 @@ my-grey = #565656
   margin-left 100px
   flex-wrap wrap
   align-items center
-  @media screen and (max-width: 1140px)
+  @media screen and (max-width: medium-break)
     justify-content center
     margin 0 auto
     margin-top 20px
@@ -30,15 +31,15 @@ my-grey = #565656
   flex-direction column
   align-items center
   justify-content center
-  height 600px
-  max-width 460px
+  height 630px
+  max-width 490px
   width 100%
   border-radius 5px
   //background-color cyan
   background grad
   box-shadow 5px 5px 30px rgba(0,0,0,0.5)
   z-index 2
-  @media screen and (max-width: 1140px)
+  @media screen and (max-width: medium-break)
     transform translate(0,0)
     height 90vh
     width 60vw
@@ -61,8 +62,8 @@ my-grey = #565656
 .prompter
   display flex
   justify-content flex-end
-  height 580px
-  max-width 600px
+  height 610px
+  max-width 620px
   width 100%
   background-color white
   border 1px solid grey
@@ -71,7 +72,7 @@ my-grey = #565656
   z-index 1
   position relative
   padding-right 30px
-  @media screen and (max-width: 1140px)
+  @media screen and (max-width: medium-break)
     padding-right 0px
     transform translate(0,0)
     justify-content center
@@ -90,9 +91,10 @@ my-grey = #565656
   color black
   padding 20px
   width 400px
-  @media screen and (max-width: 1140px)
+  @media screen and (max-width: medium-break)
     width 100%
     padding 20vw
+    padding-top 30px
   @media screen and (max-width: 600px)
     padding 13vw
     padding-right 20px
@@ -107,7 +109,7 @@ my-grey = #565656
   margin-bottom 10px
   color my-pink
   font-weight bold
-  @media screen and (max-width: 1140px)
+  @media screen and (max-width: medium-break)
     font-size 17px
 
 .package_price
@@ -138,6 +140,7 @@ my-grey = #565656
   display flex
   align-items center
   justify-content center
+  transform translate(0,-7px)
   @media screen and (max-width: 600px)
     height 80px
 

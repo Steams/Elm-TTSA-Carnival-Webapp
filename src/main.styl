@@ -7,6 +7,7 @@ lighter-purple = #130840
 my-burgundy =#CB1D34
 my-orange = #EF473A
 my-turquoise = #5E6C5D
+medium-break = 1190px
 
 my-gradient = -webkit-linear-gradient(-65deg, dark-purple 0%, lighter-purple 40%, dark-purple 80%)
 
@@ -38,9 +39,9 @@ body::before
   z-index -1
   filter brightness(0.8) blur(2px)
   box-sizing border-box
-  margin -5px
+  margin -5px -5px 0px -5px
   transform translate(-4px,0)
-  @media screen and (max-width: 1140px)
+  @media screen and (max-width: medium-break)
     background white
     filter brightness(1)
 

@@ -37,7 +37,7 @@ package_1_description =
             , li [] [text "Premium drinks on the road"]
             , li [] [text "Breakfast"]
             ]
-         , p [] [text "Early bird offer valid until Friday February 20th"]
+         , p [] [text "Early bird offer valid until Monday February 20th"]
          , p [class "fine_print"] [text " You will be notifed by email when measurements are to be taken. Size choice not necessary."]
         ]
 
@@ -88,7 +88,8 @@ package_3_description : Html Msg
 package_3_description =
     div []
         [
-          p [ class "colors_available" ] [text "Colors Available - black,white"]
+          p [class "fine_print"] [text "One size fits all"]
+        , p [ class "colors_available" ] [text "Colors Available - black,white"]
         , p [ class "inclusive" ] [text "Package inclusive of"]
         , ul []
             [
@@ -96,6 +97,8 @@ package_3_description =
             , li [] [text "Cup for the road"]
             , li [] [text "Premium drinks on the road"]
             , li [] [text "Breakfast"]
+            , p [class "adding_for_space_bad_programmer"] []
+            , p [class "fine_print"] [text "* Tube top available for separate sale at $1200. Please specify \"no package\" in the registration box."]
             ]
         ]
 
@@ -116,7 +119,8 @@ package_4_description : Html Msg
 package_4_description =
     div []
         [
-          p [ class "colors_available" ] [text "Colors Available - black,white"]
+          p [class "fine_print"] [text "Models are in size small"]
+        , p [ class "colors_available" ] [text "Colors Available - black,white"]
         , p [ class "inclusive" ] [text "Package inclusive of"]
         , ul []
             [
@@ -124,6 +128,8 @@ package_4_description =
             , li [] [text "Cup for the road"]
             , li [] [text "Premium drinks on the road"]
             , li [] [text "Breakfast"]
+            , p [class "adding_for_space_bad_programmer"] []
+            , p [class "fine_print"] [text "* TShirts or Tanks available for separate sale at $1800. Please specify \"no package\" in the registration box"]
             ]
         ]
 
@@ -146,7 +152,8 @@ package_5_description : Html Msg
 package_5_description =
     div []
         [
-          p [ class "colors_available" ] [text "Colors Available - black,white"]
+          p [class "fine_print"] [text "Size modeled for T-Shirt is small. Size modeled for Tank Top is medium "]
+        , p [ class "colors_available" ] [text "Colors Available - black,white"]
         , p [ class "inclusive" ] [text "Package inclusive of"]
         , ul []
             [
@@ -154,6 +161,8 @@ package_5_description =
             , li [] [text "Cup for the road"]
             , li [] [text "Premium drinks on the road"]
             , li [] [text "Breakfast"]
+            , p [class "adding_for_space_bad_programmer"] []
+            , p [class "fine_print"] [text "* TShirts or Tanks available for separate sale at $1800. Please specify \"no package\" in the registration box."]
             ]
         ]
 
