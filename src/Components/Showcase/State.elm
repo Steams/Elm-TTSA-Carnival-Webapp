@@ -45,14 +45,14 @@ package_1 : Package
 package_1 =
     {
       title = "Female Costume (Top and Bottom)"
-    , cost = "$6000 | early bird offer $5500"
+    , cost = "SOLD OUT"
     , description = package_1_description
     , slides = Array.fromList
         [
-          Slide "../res/package_1_image_1.jpeg" 1066 1600
-        , Slide "../res/package_1_image_2.jpeg" 1066 1600
-        , Slide "../res/package_1_image_3.jpeg" 1066 1600
-        , Slide "../res/package_1_image_4.jpeg" 1066 1600
+          Slide "../res/soldout_package_1_image_1.jpeg" 1080 1080
+        -- , Slide "../res/package_1_image_2.jpeg" 1066 1600
+        -- , Slide "../res/package_1_image_3.jpeg" 1066 1600
+        -- , Slide "../res/package_1_image_4.jpeg" 1066 1600
         ]
     }
 
@@ -75,12 +75,12 @@ package_2 : Package
 package_2 =
     {
         title = "Monokini"
-      , cost = "$4000"
+      , cost = "SOLD OUT"
       , description = package_2_description
       , slides = Array.fromList
             [
-              Slide "../res/package_2_image_1.jpeg" 1066 1600
-            , Slide "../res/package_2_image_2.jpeg" 1066 1600
+              Slide "../res/soldout_package_2_image_1.jpeg" 1080 1080
+            -- , Slide "../res/package_2_image_2.jpeg" 1066 1600
             ]
     }
 
