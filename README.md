@@ -4,11 +4,11 @@ Simple web app (written in elm) for showcasing the UWI TTSA's Carnival packages 
 Screenshots:
 
 
-<img src="http://i.imgur.com/6L6BaA8.png">
+<img src="http://i.imgur.com/BYUz0Uj.jpg">
 
-<img src="http://i.imgur.com/zcwnCka.png">
+<img src="http://i.imgur.com/eOHqCt8.jpg">
 
-<img src="https://dl2.pushbulletusercontent.com/HdbdwgUj5LttqjLHN351uUgbXFPtZYu9/Screenshot_20170215-001722.png" width="450">
+<img src="https://dl2.pushbulletusercontent.com/25Gzre7hc6sWAXFpKCuef2KXl0E79B53/Screenshot_20170215-222021.png" width="450">
 
 <img src="https://dl2.pushbulletusercontent.com/oWS1stpSd2I2WjyPxFNVfzCPCpvN94MV/Screenshot_20170213-160040.png" width="450">
 
