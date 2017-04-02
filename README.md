@@ -8,6 +8,8 @@ Screenshots:
 
 <img src="http://i.imgur.com/eOHqCt8.jpg">
 
+<img src="http://imgur.com/HjYtnkO.jpg">
+
 <img src="https://dl2.pushbulletusercontent.com/25Gzre7hc6sWAXFpKCuef2KXl0E79B53/Screenshot_20170215-222021.png" width="450">
 
 <img src="https://dl2.pushbulletusercontent.com/oWS1stpSd2I2WjyPxFNVfzCPCpvN94MV/Screenshot_20170213-160040.png" width="450">
